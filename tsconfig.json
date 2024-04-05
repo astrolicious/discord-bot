@@ -1,0 +1,14 @@
+{
+	"include": ["src/**/*"],
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["ESNext"],
+		"types": ["@cloudflare/workers-types"],
+		"rootDir": "./src",
+		"baseUrl": "./src",
+		"strict": true,
+		"moduleResolution": "Node10",
+		"outDir": "./dist",
+	}
+}
