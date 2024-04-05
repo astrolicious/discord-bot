@@ -27,5 +27,6 @@ jobs:
             - name: Deploy staging
               uses: cloudflare/wrangler-action@v3.3.2
               with:
+                command: deploy --env staging
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                 preCommands: bun register
