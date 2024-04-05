@@ -1,0 +1,29 @@
+name: Deploy production
+
+on:
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        name: Deploy production
+        runs-on: ubuntu-latest
+        environment: production
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_APPLICATION_ID: ${{ secrets.DISCORD_APPLICATION_ID }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup bun
+              uses: oven-sh/setup-bun@v1
+
+            - name: Install dependencies
+              run: bun install
+
+            - name: Deploy production
+              uses: cloudflare/wrangler-action@v3.3.2
+              with:
+                command: deploy --env production
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                preCommands: bun register
