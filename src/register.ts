@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 
 config({ path: resolve(process.cwd(), '.dev.vars') });
 
-if (!process.env.DISCORD_TOKEN || !process.env.DISCORD_CLIENT_ID) {
+if (!process.env.DISCORD_TOKEN || !process.env.DISCORD_APPLICATION_ID) {
 	console.error('The required tokens to register commands were not present');
 	process.exit(1);
 }
@@ -24,6 +24,6 @@ for (const commandName in CommandList) {
 
 console.log(`Started refreshing ${commands.length} commands.`);
 
-const data: any = await rest.put(Routes.applicationCommands(process.env.DISCORD_CLIENT_ID), { body: commands });
+const data: any = await rest.put(Routes.applicationCommands(process.env.DISCORD_APPLICATION_ID), { body: commands });
 
 console.log(`Successfully reloaded ${data.length} commands.`);
