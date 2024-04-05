@@ -5,3 +5,17 @@ compatibility_date = "2024-04-04"
 compatibility_flags = [ "nodejs_compat" ]
 
 workers_dev = false
+
+[env.staging]
+routes = [{ pattern = "staging.ptal-bot.marijnkneppers.dev", custom_domain = true }]
+
+[env.staging.vars]
+DISCORD_PUBLIC_KEY = "0f04aa2be4c2825bcd520f73bd9523ba0e97b11acb58c91927855daf7831d22c"
+DISCORD_APPLICATION_ID = "1225902905786110074"
+
+[env.production]
+routes = [{ pattern = "ptal-bot.marijnkneppers.dev", custom_domain = true }]
+
+[env.production.vars]
+DISCORD_PUBLIC_KEY = "5d53f1984903809b1b8dc5843cd4735904d5d011d66a076d41f21d0cedd356ee"
+DISCORD_APPLICATION_ID = "1225902823842119820"
