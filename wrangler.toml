@@ -1,3 +1,4 @@
+account_id = "63a396317077f696de9fe3abfe976bbe"
 name = "ptal-bot"
 main = "./src/index.ts"
 
