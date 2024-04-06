@@ -2,6 +2,6 @@ import {SlashCommandBuilder} from "@discordjs/builders";
 import { DiscordResponse, SlashCommandInteraction } from "client";
 
 declare type Command = {
-	data: SlashCommandBuilder,
-	execute(interaction: SlashCommandInteraction): DiscordResponse
+	data: Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">,
+	execute(interaction: SlashCommandInteraction): Promise<DiscordResponse>
 };

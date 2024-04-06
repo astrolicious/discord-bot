@@ -11,11 +11,14 @@ export class DiscordClient {
 	env: Env;
 	ctx: ExecutionContext;
 
+	static client: DiscordClient;
+
 	constructor(commands: Command[], env: Env, ctx: ExecutionContext)
 	{
 		this.commands = commands;
 		this.env = env;
 		this.ctx = ctx;
+		DiscordClient.client = this;
 	}
 
 	async handle(request: Request): Promise<DiscordResponse | Response>
