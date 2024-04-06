@@ -93,10 +93,12 @@ const command = {
 			interaction.error("Failed to request pull request from the github api");
 		}
 
-		return interaction.deferReply({hidden: false}, async () => {
+		return interaction.reply({content: "not yet implemented"});
+
+		// return interaction.deferReply({hidden: false}, async () => {
 
 
-		});
+		// });
 	},
 } satisfies Command;
 
