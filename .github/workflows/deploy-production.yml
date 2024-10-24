@@ -22,7 +22,7 @@ jobs:
               run: bun install
 
             - name: Deploy production
-              uses: cloudflare/wrangler-action@v3.4.1
+              uses: cloudflare/wrangler-action@v3.11.0
               with:
                 command: deploy --env production
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
