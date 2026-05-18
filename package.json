@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240404.0",
-    "typescript": "^5.4.4"
+    "typescript": "^6.0.0"
   }
 }
