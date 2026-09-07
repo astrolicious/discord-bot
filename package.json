@@ -18,7 +18,7 @@
     "@discordjs/rest": "^2.2.0",
     "@octokit/rest": "^20.1.0",
     "discord-api-types": "^0.37.79",
-    "discord-interactions": "^3.4.0",
+    "discord-interactions": "^4.0.0",
     "dotenv": "^16.4.5",
     "itty-router": "^5.0.9",
     "wrangler": "^3.47.1"
